@@ -4,8 +4,18 @@ import Layout from "./Layout";
 const defaultdata = [
   {
     id: 1,
-    nama: "Luuk De Jong",
-    masajabatan: "0000 - 0000",
+    nama: "No data available",
+    masajabatan: "-",
+  },
+  {
+    id: 2,
+    nama: "No data available",
+    masajabatan: "-",
+  },
+  {
+    id: 3,
+    nama: "No data available",
+    masajabatan: "-",
   },
 ];
 
@@ -26,33 +36,23 @@ const Data = () => {
 
   return (
     <tbody>
-      {datakades.map((data) => {
+      {defaultdata.map((data) => {
+        const bgchange = data.id % 2 === 0;
         return (
-          <DataKades
-            key={data.id}
-            number={data.id}
-            name={data.nama}
-            duration={data.masajabatan}
-          />
+          <tr key={data.id} className={bgchange ? `bg-gray-200` : `bg-white`}>
+            <td className="border border-slate-100 shadow-sm text-[10px] md:text-[16px] text-gray-500 font-medium text-center font-[Poppins] py-1 ">
+              {data.id.toString()}
+            </td>
+            <td className="border border-slate-100 shadow-sm text-[10px] md:text-[16px] text-gray-500 font-medium text-center font-[Poppins] py-1 ">
+              {data.nama}
+            </td>
+            <td className="border border-slate-100 shadow-sm text-[10px] md:text-[16px] text-gray-500 font-medium text-center font-[Poppins] py-1 ">
+              {data.masajabatan}
+            </td>
+          </tr>
         );
       })}
     </tbody>
-  );
-};
-
-const DataKades = (props) => {
-  return (
-    <tr key={props.id}>
-      <td className="border border-slate-100 shadow-sm text-[10px] md:text-[16px] text-gray-500 font-medium text-center font-[Poppins] py-1 ">
-        {props.number}
-      </td>
-      <td className="border border-slate-100 shadow-sm text-[10px] md:text-[16px] text-gray-500 font-medium text-center font-[Poppins] py-1 ">
-        {props.name}
-      </td>
-      <td className="border border-slate-100 shadow-sm text-[10px] md:text-[16px] text-gray-500 font-medium text-center font-[Poppins] py-1 ">
-        {props.duration}
-      </td>
-    </tr>
   );
 };
 

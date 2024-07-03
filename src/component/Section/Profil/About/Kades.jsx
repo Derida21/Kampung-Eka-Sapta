@@ -6,8 +6,9 @@ const Kades = () => {
   const [kades, setKades] = useState({
     img: imgkades,
     alt: "Kades Image",
-    data: "Nama",
-    detail: "Simanjuntak",
+    nama: "John Die",
+    nip: "000090900909",
+    jabatan: "PJ Kepala Desa",
   });
 
   const getDataKades = async () => {
@@ -34,13 +35,22 @@ const Kades = () => {
             className="w-1/2 md:w-full lg:max-w-[400px]"
           />
         </div>
-        <table className="table-auto">
-          <thead>
+        <div className="flex items-"></div>
+        <table className="table-auto h-fit">
+          <tbody>
             <tr className="font-[Poppins] text-gray-500 text-[10px] md:text-[12px] align-top">
-              <td className="w-[60px] md:w-[80px]">{kades.data}</td>
-              <td className="">{kades.detail}</td>
+              <td className="pb-2 w-[60px] md:w-[80px]">Nama</td>
+              <td className="">{kades.nama}</td>
             </tr>
-          </thead>
+            <tr className="font-[Poppins] text-gray-500 text-[10px] md:text-[12px] align-top">
+              <td className="pb-2 w-[60px] md:w-[80px]">NIP</td>
+              <td className="">{kades.nip}</td>
+            </tr>
+            <tr className="font-[Poppins] text-gray-500 text-[10px] md:text-[12px] align-top">
+              <td className="pb-2 w-[60px] md:w-[80px]">Jabatan</td>
+              <td className="">{kades.jabatan}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>

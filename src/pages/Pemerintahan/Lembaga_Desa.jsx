@@ -2,12 +2,12 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 
 const LembagaDesa = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://nurul-huda.org/api/");
-      if (response.data.success) setData(response.data.data.berita_utama);
+      const response = await axios.get("http://nurul-huda.org/api/profil");
+      if (response.data.success) setData(response.data.data.visi_misi);
 
       console.log(response);
     } catch (error) {
@@ -20,17 +20,17 @@ const LembagaDesa = () => {
   };
 
   useEffect(() => {
-    console.log(data);
-  }, [data]);
-
-  useEffect(() => {
     fetchData();
   }, []);
 
   return (
     <div className="pt-20">
-      {data.map((item) => {})}
-      <button></button>
+      {data && (
+        <>
+          <h1>{data.misi}</h1>
+          <h1>{data.visi}</h1>
+        </>
+      )}
     </div>
   );
 };

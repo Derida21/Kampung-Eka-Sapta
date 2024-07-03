@@ -36,7 +36,7 @@ const Office = () => {
       </h1>
       {/* Detail Kantor Desa */}
       <div className="border-l-2 pl-3 md:pl-6 border-teal-700 h-full">
-        <table className=" border-spacing-4">
+        <table className="table-auto">
           <tbody>
             {office.map((office) => {
               return (
@@ -58,7 +58,7 @@ function TableRow(props) {
   return (
     <tr
       key={props.id}
-      className="font-[Poppins] text-gray-500 text-[10px] md:text-[12px] align-top "
+      className="font-[Poppins] text-gray-500 text-[10px] md:text-[12px] align-top  "
     >
       <td className="pb-2 w-[60px] md:w-1/4">{props.data}</td>
       <td className="pb-2 ">{props.detail}</td>

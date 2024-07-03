@@ -1,5 +1,4 @@
-import { IconCalendar, IconCalendarMonth } from "@tabler/icons-react";
-import { TfiWrite } from "react-icons/tfi";
+import { IconCalendarMonth, IconUserFilled } from "@tabler/icons-react";
 
 const Thumbnail = (props) => {
   const { src, alt, className = "w-auto md:w-1/2 px-2 lg:px-0" } = props;
@@ -29,7 +28,7 @@ const Author = (props) => {
   } = props;
   return (
     <div className={className}>
-      <TfiWrite className={svg} />
+      <IconUserFilled className={svg} />
       <div className={authorclassName}>{author}</div>
     </div>
   );

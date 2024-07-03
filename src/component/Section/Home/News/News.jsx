@@ -8,9 +8,9 @@ const News = () => {
 
   const getData = async () => {
     try {
-      const response = await axios.get(/api/);
-
-      setData(response.data);
+      const response = await axios.get("http://nurul-huda.org/api/berita");
+      console.log(response.data.data.data);
+      setData(response.data.data.data);
     } catch (error) {
       if (!error.response) {
         console.error("Network error:", error);
@@ -21,13 +21,21 @@ const News = () => {
   };
 
   useEffect(() => {
-    console.log(data);
     getData();
   }, []);
 
   return (
     <div className="flex flex-col w-full md:rounded-3xl drop-shadow-xl gap-5 md:gap-0 shadow-gray-800 bg-white py-2 md:px-5 md:pt-0 md:pb-10 lg:px-10 rounded-lg lg:rounded-3xl">
-      <Main />
+      {data.map((news, index) => (
+        <Main
+          key={news.slug}
+          index={index}
+          judul={news.judul}
+          thumbnail={news.thumbnail}
+          isi={news.isi}
+          author={news.author.nama}
+        />
+      ))}
       {/* List Berita */}
       <div className="flex flex-col gap-3 border-t-[2px] border-gray-400 px-2 pt-3 lg:px-0 md:border-none">
         <div className="flex items-end justify-between ">
@@ -49,19 +57,26 @@ const News = () => {
   );
 };
 
-function Main({}) {
+function Main({ judul, thumbnail, isi, author, index }) {
+  const reverse = index % 2 === 0;
   return (
     <>
-      <Card key={""}>
-        <Card.Thumbnail src={""} />
+      <Card
+        wrapper={
+          reverse
+            ? `flex flex-col md:flex-row-reverse gap-3 md:gap-0 md:justify-between lg:gap-[30px]`
+            : `flex flex-col md:flex-row gap-3 md:gap-0 md:justify-between lg:gap-[30px]`
+        }
+      >
+        <Card.Thumbnail src={thumbnail} />
         <div className="flex flex-col px-2 lg:px-0 gap-[10px] md:w-1/2">
           <div className="flex flex-col gap-2 md:justify-between h-full ">
             <div className="flex justify-between items-center">
               <Card.Date date={""} />
-              <Card.Author author={""} />
+              <Card.Author author={author} />
             </div>
-            <Card.Detail title={""} detail="Baca Selengkapnya">
-              {""}
+            <Card.Detail title={judul} detail="Baca Selengkapnya">
+              {isi}
             </Card.Detail>
           </div>
         </div>
@@ -90,7 +105,7 @@ function List({ news }) {
                   dateclassName="text-gray-500 text-[6px] font-medium font-[Poppins] lg:text-[10px] h-2 lg:h-3"
                 />
                 <Card.Author
-                  className="[&>svg]:h-[7px] flex items-center gap-[2px] lg:gap-1 [&>svg]:lg:h-4 "
+                  className=" flex items-center gap-[2px] lg:gap-1 [&>svg]:lg:h-4 "
                   author={item.author}
                   authorclassName="text-gray-500 text-[6px] font-medium font-[Poppins] lg:text-[10px] "
                 />

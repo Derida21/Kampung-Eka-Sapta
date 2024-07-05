@@ -14,6 +14,7 @@ import ScrollToTop from "./scrooltop";
 import PerangkatDesa from "./pages/Pemerintahan/Perangkat_Desa";
 import LembagaDesa from "./pages/Pemerintahan/Lembaga_Desa";
 import BeritaDesa from "./pages/Informasi Publik/Berita_Desa";
+import DetailBerita from "./component/Section/Informasi Publik/Berita/Detail_Berita";
 
 const App = () => {
   return (
@@ -45,6 +46,10 @@ const App = () => {
           <Route
             path="/Informasi Publik/Berita Desa"
             element={<BeritaDesa />}
+          />
+          <Route
+            path="/Informasi Publik/Berita Desa/:slug"
+            element={<DetailBerita />}
           />
         </Routes>
         <Footer />

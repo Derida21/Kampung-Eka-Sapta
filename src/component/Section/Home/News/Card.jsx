@@ -63,12 +63,12 @@ const Detail = (props) => {
         <h1 className={titleclassName}>{title}</h1>
         <p className={descriptionclassName}>{children}</p>
       </div>
-      <a
+      <p
         href={href}
         className="text-teal-700 text-[10px] xl:text-[12px] font-medium font-[Poppins] hover:text-teal-500 underline underline-offset-2"
       >
         {detail}
-      </a>
+      </p>
     </div>
   );
 };

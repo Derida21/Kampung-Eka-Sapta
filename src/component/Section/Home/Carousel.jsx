@@ -89,7 +89,7 @@ const Carousel = () => {
               to={berita_utama.href}
               className="absolute bottom-6 md:bottom-8 flex flex-col w-full px-3 md:px-10"
             >
-              <h2 className="text-white font-[Poppins] font-semibold text-[12px] md:text-[16px] lg:text-[36px]">
+              <h2 className="text-white font-[Poppins] font-semibold text-[12px] md:text-[16px] lg:text-[32px]">
                 {berita_utama.judul}
               </h2>
               <p className="text-white text-[8px] md:text-[10px] lg:text-[16px] font-[Poppins] text-justify line-clamp-3 md:overflow-hidden  ">

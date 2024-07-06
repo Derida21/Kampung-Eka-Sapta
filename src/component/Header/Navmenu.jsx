@@ -71,7 +71,7 @@ const Navmenu = () => {
         <Dropdown label="Informasi Publik" options={options3} />
         <Dropdown label="Transparansi" options={options4} />
         <a
-          href="#"
+          href="/Pelayanan/Pelayanan"
           className="flex w-full items-center py-3 md:pr-[40px] lg:px-3 xl:px-5 font-[Poppins] font-semibold
         text-[10px] md:text-[12px] lg:text-[12px] text-gray-700 hover:text-teal-700 text-nowrap"
         >
@@ -98,8 +98,8 @@ const Navmenu = () => {
         <Dropdown label="Informasi Publik" options={options3} />
         <Dropdown label="Transparansi" options={options4} />
         <a
-          href=""
-          className="flex items-center lg:px-3 xl:px-5 font-[Poppins] font-semibold lg:text-[12px] text-gray-700 hover:text-teal-700 text-nowrap"
+          href="/Pelayanan/Pelayanan"
+          className="flex items-center lg:px-3 xl:px-5 font-[Poppins] font-semibold lg:text-[12px] text-gray-700 hover:text-teal-7000 text-nowrap"
         >
           Pelayanan
         </a>

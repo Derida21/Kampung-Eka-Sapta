@@ -13,6 +13,7 @@ import Struktur from "./pages/Pemerintahan/Struktur_Organisasi";
 import ScrollToTop from "./scrooltop";
 import PerangkatDesa from "./pages/Pemerintahan/Perangkat_Desa";
 import LembagaDesa from "./pages/Pemerintahan/Lembaga_Desa";
+import Pelayanan from "./pages/Pelayanan/Pelayanan";
 
 const App = () => {
   return (
@@ -41,7 +42,9 @@ const App = () => {
           />
           <Route path="/Pemerintahan/Lembaga Desa" element={<LembagaDesa />} />
           {/* Informasi Publik */}
-          <Route path="#" />
+
+          
+          <Route path="/Pelayanan/Pelayanan" element={<Pelayanan />} />
         </Routes>
         <Footer />
       </Router>

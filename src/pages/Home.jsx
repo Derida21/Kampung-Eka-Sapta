@@ -7,7 +7,6 @@ import penduduk from "../assets/icon/1x/icon-penduduk.png";
 import pelayanan from "../assets/icon/1x/icon-pelayanan.png";
 import keuangan from "../assets/icon/1x/icon-keuangan.png";
 import pembangunan from "../assets/icon/1x/icon-pembangunan.png";
-import { IconChartInfographic } from "@tabler/icons-react";
 
 function Home() {
   return (

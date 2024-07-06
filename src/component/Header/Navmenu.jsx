@@ -17,12 +17,12 @@ const Navmenu = () => {
     { label: "Lembaga Desa", href: "/Pemerintahan/Lembaga Desa" },
   ];
   const options3 = [
-    { label: "Pengumuman", href: "#" },
-    { label: "Agenda Kegiatan", href: "#" },
-    { label: "Berita Desa", href: "#" },
-    { label: "Galeri", href: "#" },
-    { label: "Produk Hukum", href: "#" },
-    { label: "Download", href: "#" },
+    { label: "Pengumuman", href: "/Informasi Publik/Pengumuman" },
+    { label: "Agenda Kegiatan", href: "/Informasi Publik/Agenda Kegiatan" },
+    { label: "Berita Desa", href: "/Informasi Publik/Berita Desa" },
+    { label: "Galeri", href: "/Informasi Publik/Galeri" },
+    { label: "Produk Hukum", href: "/Informasi Publik/Produk Hukum" },
+    { label: "Download", href: "/Informasi Publik/Download" },
   ];
   const options4 = [
     { label: "APBD", href: "#" },

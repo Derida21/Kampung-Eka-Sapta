@@ -12,7 +12,7 @@ function Home() {
   return (
     <>
       {/* Carousel */}
-      <div className="px-5 pt-14 md:px-[60px] bg-slate-100 md:pt-[120px] lg:px-[80px] lg:pt-[130px] xl:px-[160px]">
+      <div className="px-5 pt-14 md:px-[60px] md:pt-[120px] lg:px-[80px] lg:pt-[130px] xl:px-[160px]">
         <Carousel />
       </div>
       {/* Data*/}
@@ -20,7 +20,7 @@ function Home() {
         <h1 className="lg:text-3xl font-[Poppins] font-bold text-teal-700 w-full text-center">
           Statistik Desa
         </h1>
-        <div className="grid grid-cols-2 md:flex md:justify-between gap-3">
+        <div className="grid grid-cols-2 md:flex md:justify-around lg:justify-between gap-3">
           <Icon
             href="/Profil/Demografi Desa"
             src={penduduk}

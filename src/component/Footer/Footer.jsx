@@ -6,7 +6,9 @@ import {
 import Logo from "../Logo";
 import Map from "./Map";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import Menu from "./Menu";
+import Menu from "./Menu/Layout";
+import Sosmed from "./Sosmed";
+import Layout from "./Menu/Layout";
 
 export default function Footer() {
   return (
@@ -32,14 +34,7 @@ export default function Footer() {
               <span className="text-nowrap text-white font-[Poppins] text-[12px]">
                 Media Sosial:
               </span>
-              <div className="flex flex-row gap-3 w-full">
-                <a href="https://www.instagram.com/accounts/login/">
-                  <FaInstagram className="h-6 w-6 fill-white" />
-                </a>
-                <a href="">
-                  <FaFacebook className="h-6 w-6 fill-white" />
-                </a>
-              </div>
+              <Sosmed />
             </div>
           </div>
           <div className="flex flex-col gap-5 md:gap-3 lg:gap-5 xl:gap-10 md:flex-row lg:pt-2">
@@ -49,17 +44,17 @@ export default function Footer() {
                 Kontak
               </span>
               <div className="flex flex-col w-full gap-3 xl:gap-5">
-                <Menu
+                <Layout
                   icon={<IconMailFilled className="fill-white" />}
                   text="fahrulakbar@gmail.com"
                   href="/#"
                 />
-                <Menu
+                <Layout
                   icon={<IconBrandWhatsapp />}
                   text="+62 883 8583 9098"
                   href="/#"
                 />
-                <Menu
+                <Layout
                   icon={<IconBrandWhatsapp />}
                   text="+62 883 8583 9098"
                   href="/#"
@@ -72,9 +67,9 @@ export default function Footer() {
                 Pelayanan
               </span>
               <div className="flex flex-col w-full gap-3 xl:gap-5">
-                <Menu text="Surat Keterangan Bekum Menikah" href="/#" />
-                <Menu text="Surat Keterangan Kematian" href="/#" />
-                <Menu text="Surat Pengantar" href="/#" />
+                <Layout text="Surat Keterangan Bekum Menikah" href="/#" />
+                <Layout text="Surat Keterangan Kematian" href="/#" />
+                <Layout text="Surat Pengantar" href="/#" />
               </div>
             </div>
             {/* Lainnya*/}

@@ -47,7 +47,7 @@ export default function BeritaDesa() {
             {others.map((news, index) => (
               <Card key={index} container="">
                 <Link
-                  to={`/Informasi Publik/Berita Desa/${news.slug}`}
+                  to={`/Informasi-Publik/Berita-Desa/${news.slug}`}
                   className="flex flex-col md:flex-row w-full gap-2 md:gap-5"
                 >
                   <Card.Thumbnail

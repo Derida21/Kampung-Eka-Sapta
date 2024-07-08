@@ -13,12 +13,9 @@ import Struktur from "./pages/Pemerintahan/Struktur_Organisasi";
 import ScrollToTop from "./scrooltop";
 import PerangkatDesa from "./pages/Pemerintahan/Perangkat_Desa";
 import LembagaDesa from "./pages/Pemerintahan/Lembaga_Desa";
-<<<<<<< HEAD
 import Pelayanan from "./pages/Pelayanan/Pelayanan";
-=======
 import BeritaDesa from "./pages/Informasi Publik/Berita_Desa";
 import DetailBerita from "./component/Section/Informasi Publik/Berita/Detail_Berita";
->>>>>>> fe312b7c17f11b76665ee75989e4085c71f0bf01
 
 const App = () => {
   return (
@@ -46,21 +43,17 @@ const App = () => {
             element={<PerangkatDesa />}
           />
           <Route path="/Pemerintahan/Lembaga Desa" element={<LembagaDesa />} />
-          {/* Informasi Publik */}
-<<<<<<< HEAD
-
           
           <Route path="/Pelayanan/Pelayanan" element={<Pelayanan />} />
-=======
+          {/* Informasi Publik */}
           <Route
-            path="/Informasi Publik/Berita Desa"
+            path="/Informasi-Publik/Berita-Desa"
             element={<BeritaDesa />}
           />
           <Route
-            path="/Informasi Publik/Berita Desa/:slug"
+            path="/Informasi-Publik/Berita-Desa/:slug"
             element={<DetailBerita />}
           />
->>>>>>> fe312b7c17f11b76665ee75989e4085c71f0bf01
         </Routes>
         <Footer />
       </Router>

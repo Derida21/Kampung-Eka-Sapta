@@ -1,20 +1,18 @@
 import { useEffect, useState } from "react";
 import Layout from "../Layout";
 import imgdefault from "../../../../assets/img/bg_sejarah.jpg";
+import axios from "axios";
 
 const Thumbnail = () => {
-  const url = "";
-  const [about, setAbout] = useState({
-    src: imgdefault,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  });
+  const [about, setAbout] = useState({});
 
   const getDataAbout = async () => {
-    const response = await fetch(url);
-    const dataAbout = await response.json();
-    setAbout(dataAbout);
-    console.log(about);
+    try {
+      const response = await axios.get("http://nurul-huda.org/api/sejarah");
+      setAbout(response.data.data);
+    } catch (error) {
+      console.error("Error fetching data:", error.response || error.message);
+    }
   };
 
   useEffect(() => {
@@ -23,8 +21,8 @@ const Thumbnail = () => {
 
   return (
     <Layout className="flex flex-col gap-2">
-      <Layout.Thumbnail title="Sejarah Desa" src={about.src} alt={about.alt} />
-      <Layout.Description>{about.description}</Layout.Description>
+      <Layout.Thumbnail title="Sejarah Desa" src={about.src || imgdefault} alt={about.alt || "Sejarah Desa"} />
+      <Layout.Description>{about.isi}</Layout.Description>
     </Layout>
   );
 };

@@ -19,10 +19,10 @@ const Navmenu = () => {
   const options3 = [
     { label: "Pengumuman", href: "/Informasi Publik/Pengumuman" },
     { label: "Agenda Kegiatan", href: "/Informasi Publik/Agenda Kegiatan" },
-    { label: "Berita Desa", href: "/Informasi Publik/Berita Desa" },
-    { label: "Galeri", href: "/Informasi Publik/Galeri" },
-    { label: "Produk Hukum", href: "/Informasi Publik/Produk Hukum" },
-    { label: "Download", href: "/Informasi Publik/Download" },
+    { label: "Berita Desa", href: "/Informasi-Publik/Berita-Desa" },
+    { label: "Galeri", href: "/Informasi-Publik/Galeri" },
+    { label: "Produk Hukum", href: "/Informasi-Publik/Produk-Hukum" },
+    { label: "Download", href: "/Informasi-Publik/Download" },
   ];
   const options4 = [
     { label: "APBD", href: "#" },

@@ -81,8 +81,9 @@ export default function Pelayanan() {
                 className="border-2 border-teal-700 p-2 rounded"
               >
                 <option value="">Pilih Jenis Pelayanan</option>
-                <option value="surat_pindah">Surat Pindah</option>
-                <option value="surat_keterangan_tidak_mampu">Surat Keterangan Tidak Mampu</option>
+                <option value="surat_pindah">SKTM BPJS</option>
+                <option value="surat_keterangan_tidak_mampu">Surat Pengantar Kecamatan</option>
+                <option value="surat_keterangan_tidak_mampu">SKTM sekolah</option>
               </select>
             </div>
             <button

@@ -34,7 +34,14 @@ const DetailBerita = () => {
         {data && (
           <div className="flex flex-col gap-2 drop-shadow-lg bg-white border-l-[1px] border-gray-300 rounded-md">
             {data.thumbnail && (
-              <img src={data.thumbnail || img} className="rounded-md" />
+              <div
+                className="rounded-md h-[650px]"
+                style={{
+                  backgroundImage: `url(${data.thumbnail})`,
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+              ></div>
             )}
             <div className="flex flex-col gap-2">
               <div className="flex">

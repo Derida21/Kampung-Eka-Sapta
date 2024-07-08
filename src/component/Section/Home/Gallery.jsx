@@ -36,7 +36,16 @@ const defaultImage = {
 function Frame({ gallery }) {
   const imagesToShow = gallery.length
     ? gallery
-    : [defaultImage, defaultImage, defaultImage, defaultImage];
+    : [
+        defaultImage,
+        defaultImage,
+        defaultImage,
+        defaultImage,
+        defaultImage,
+        defaultImage,
+        defaultImage,
+        defaultImage,
+      ];
   return (
     <>
       {imagesToShow.map((item, index) => (

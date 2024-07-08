@@ -27,14 +27,17 @@ const News = () => {
   const main = data.slice(0, 2);
   const list = data.slice(2, 6);
 
+  const defaulitems = "";
+
   return (
     <div className="flex flex-col w-full md:rounded-3xl drop-shadow-xl gap-5 md:gap-0 shadow-gray-800 bg-white py-2 md:px-5 md:pt-0 md:pb-10 lg:px-10 rounded-lg lg:rounded-3xl">
       {main.map((news, index) => (
         <Main
-          key={news.slug}
+          key={index}
           index={index}
           judul={news.judul}
           thumbnail={news.thumbnail}
+          slug={news.slug}
           isi={news.isi}
           tanggal={news.tanggal}
           author={news.author.nama}
@@ -61,7 +64,7 @@ const News = () => {
   );
 };
 
-function Main({ judul, thumbnail, isi, author, index, tanggal }) {
+function Main({ judul, thumbnail, isi, author, index, tanggal, slug }) {
   const reverse = index % 2 === 0;
   return (
     <>
@@ -79,7 +82,11 @@ function Main({ judul, thumbnail, isi, author, index, tanggal }) {
               <Card.Date date={tanggal} />
               <Card.Author author={author} />
             </div>
-            <Card.Detail title={judul} detail="Baca Selengkapnya">
+            <Card.Detail
+              title={judul}
+              detail="Baca Selengkapnya"
+              href={`/Informasi Publik/Berita Desa/${slug}`}
+            >
               {isi}
             </Card.Detail>
           </div>
@@ -94,11 +101,11 @@ function List({ listitems }) {
     <>
       {listitems.map((news, index) => (
         <Card
-          key={news.slug}
+          key={index}
           index={index}
           container="md:flex md:w-full border-b-2 md:border border-gray-300 md:rounded lg:rounded-md"
           wrapper="w-full flex flex-row md:flex-col py-2 md:p-0 gap-2 md:gap-0"
-          href={""}
+          href={`/Informasi Publik/Berita Desa/${news.slug}`}
         >
           <Card.Thumbnail
             className="w-1/2 md:w-full md:h-20 lg:h-[100px] xl:h-[150px] rounded-sm lg:rounded-t-md"
@@ -120,7 +127,7 @@ function List({ listitems }) {
                 />
               </div>
               <Card.Detail
-                className=""
+                className="py-0"
                 title={news.judul}
                 titleclassName="text-[10px] lg:text-[10px] xl:text-[12px] font-[Poppins] line-clamp-2 font-semibold text-gray-800"
               />

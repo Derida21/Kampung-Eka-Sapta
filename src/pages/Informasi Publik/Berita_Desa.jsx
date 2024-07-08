@@ -60,7 +60,7 @@ export default function BeritaDesa() {
                     titleclassName="font-[Poppins] font-semibold text-gray-700 hover:text-teal-700"
                     descriptionclassName="font-[Poppins] text-[10px] md:text-[12px] xl:text-[14px] text-justify text-gray-500 line-clamp-5"
                   >
-                    {news.isi}
+                    <div dangerouslySetInnerHTML={{ __html: news.isi }}></div>
                   </Card.Detail>
                 </Link>
               </Card>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Pelayanan() {
+export default function PelayananForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,7 +30,9 @@ export default function Pelayanan() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const waMessage = `saya ingin mengkonfirmasikan bahwa saya telah mengajukan ${formData.serviceType} di website`;
-    const waUrl = `https://wa.me/+6285753638956?text=${encodeURIComponent(waMessage)}`;
+    const waUrl = `https://wa.me/+6285753638956?text=${encodeURIComponent(
+      waMessage
+    )}`;
     window.open(waUrl, "_blank");
   };
 
@@ -43,7 +45,9 @@ export default function Pelayanan() {
         {step === 1 && (
           <div className="flex flex-col gap-4">
             <div className="flex flex-col">
-              <label className="font-[Poppins] text-[14px] text-teal-700">Nama</label>
+              <label className="font-[Poppins] text-[14px] text-teal-700">
+                Nama
+              </label>
               <input
                 type="text"
                 name="name"
@@ -53,7 +57,9 @@ export default function Pelayanan() {
               />
             </div>
             <div className="flex flex-col">
-              <label className="font-[Poppins] text-[14px] text-teal-700">Email</label>
+              <label className="font-[Poppins] text-[14px] text-teal-700">
+                Email
+              </label>
               <input
                 type="email"
                 name="email"
@@ -63,7 +69,9 @@ export default function Pelayanan() {
               />
             </div>
             <div className="flex flex-col">
-              <label className="font-[Poppins] text-[14px] text-teal-700">No WA</label>
+              <label className="font-[Poppins] text-[14px] text-teal-700">
+                No WA
+              </label>
               <input
                 type="text"
                 name="phone"
@@ -73,7 +81,9 @@ export default function Pelayanan() {
               />
             </div>
             <div className="flex flex-col">
-              <label className="font-[Poppins] text-[14px] text-teal-700">Jenis Pelayanan</label>
+              <label className="font-[Poppins] text-[14px] text-teal-700">
+                Jenis Pelayanan
+              </label>
               <select
                 name="serviceType"
                 value={formData.serviceType}
@@ -82,8 +92,12 @@ export default function Pelayanan() {
               >
                 <option value="">Pilih Jenis Pelayanan</option>
                 <option value="surat_pindah">SKTM BPJS</option>
-                <option value="surat_keterangan_tidak_mampu">Surat Pengantar Kecamatan</option>
-                <option value="surat_keterangan_tidak_mampu">SKTM sekolah</option>
+                <option value="surat_keterangan_tidak_mampu">
+                  Surat Pengantar Kecamatan
+                </option>
+                <option value="surat_keterangan_tidak_mampu">
+                  SKTM sekolah
+                </option>
               </select>
             </div>
             <button
@@ -98,7 +112,12 @@ export default function Pelayanan() {
         {step === 2 && (
           <div className="flex flex-col gap-4">
             <div className="flex flex-col">
-              <label className="font-[Poppins] text-[14px] text-teal-700">Persyaratan {formData.serviceType === "surat_pindah" ? "Surat Pindah" : "Surat Keterangan Tidak Mampu"}</label>
+              <label className="font-[Poppins] text-[14px] text-teal-700">
+                Persyaratan{" "}
+                {formData.serviceType === "surat_pindah"
+                  ? "Surat Pindah"
+                  : "Surat Keterangan Tidak Mampu"}
+              </label>
               <textarea
                 name="requirements"
                 value={formData.requirements}
@@ -127,7 +146,3 @@ export default function Pelayanan() {
     </div>
   );
 }
-
-
-
-

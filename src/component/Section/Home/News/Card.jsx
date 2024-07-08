@@ -53,6 +53,7 @@ const Detail = (props) => {
     detailclassName = "flex flex-col gap-2",
     title,
     titleclassName = "text-[12px] lg:text-[16px] xl:text-[20px] font-[Poppins] line-clamp-2 font-semibold text-gray-800 ",
+    description,
     descriptionclassName = "w-full line-clamp-5 text-justify text-gray-500 text-[10px] lg:text-[12px] xl:text-[16px] font-normal font-[Poppins]",
     children,
     href,
@@ -62,14 +63,11 @@ const Detail = (props) => {
     <div className={className}>
       <div className={detailclassName}>
         <h1 className={titleclassName}>{title}</h1>
-        <p className={descriptionclassName}>{children}</p>
+        <p className={descriptionclassName}>{description}</p>
       </div>
-      <Link
-        to={href}
-        className="text-teal-700 text-[10px] xl:text-[12px] font-medium font-[Poppins] hover:text-teal-500 underline underline-offset-2"
-      >
-        {detail}
-      </Link>
+      <p className="text-teal-700 text-[10px] xl:text-[12px] font-medium font-[Poppins] hover:text-teal-500 underline underline-offset-2">
+        {children}
+      </p>
     </div>
   );
 };
@@ -78,12 +76,11 @@ function Card(props) {
   const {
     container = "flex flex-col md:py-10 md:border-b-2 md:border-gray-400",
     wrapper = "flex flex-col md:flex-row gap-3 md:gap-0 md:justify-between lg:gap-[30px]",
-    href,
   } = props;
   return (
-    <Link className={container} to={href}>
+    <div className={container}>
       <div className={wrapper}>{props.children}</div>
-    </Link>
+    </div>
   );
 }
 

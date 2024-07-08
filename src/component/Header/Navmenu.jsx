@@ -5,24 +5,23 @@ import { Link, useLocation } from "react-router-dom";
 
 const Navmenu = () => {
   const options1 = [
-    { label: "Tentang Kami", href: "/Profil/Tentang Kami" },
-    { label: "Sejarah Desa", href: "/Profil/Sejarah Desa" },
-    { label: "Visi Misi", href: "/Profil/Visi Misi" },
-    { label: "Demografi Desa", href: "/Profil/Demografi Desa" },
-    { label: "Geografi Desa", href: "/Profil/Geografi Desa" },
+    { label: "Tentang Kami", href: "/profil/tentang-kami" },
+    { label: "Sejarah Desa", href: "/profil/sejarah-desa" },
+    { label: "Visi Misi", href: "/profil/visi-misi" },
+    { label: "Demografi Desa", href: "/profil/demografi-desa" },
+    { label: "Geografi Desa", href: "/profil/geografi-desa" },
   ];
   const options2 = [
-    { label: "Struktur Organisasi", href: "/Pemerintahan/Struktur Organisasi" },
-    { label: "Perangkat Desa", href: "/Pemerintahan/Perangkat Desa" },
-    { label: "Lembaga Desa", href: "/Pemerintahan/Lembaga Desa" },
+    { label: "Struktur Organisasi", href: "/pemerintahan/struktur-organisasi" },
+    { label: "Perangkat Desa", href: "/pemerintahan/perangkat-desa" },
+    { label: "Lembaga Desa", href: "/pemerintahan/lembaga-desa" },
   ];
   const options3 = [
-    { label: "Pengumuman", href: "/Informasi Publik/Pengumuman" },
-    { label: "Agenda Kegiatan", href: "/Informasi Publik/Agenda Kegiatan" },
-    { label: "Berita Desa", href: "/Informasi-Publik/Berita-Desa" },
-    { label: "Galeri", href: "/Informasi-Publik/Galeri" },
-    { label: "Produk Hukum", href: "/Informasi-Publik/Produk-Hukum" },
-    { label: "Download", href: "/Informasi-Publik/Download" },
+    { label: "Agenda Kegiatan", href: "/informasi-publik/agenda-kegiatan" },
+    { label: "Berita Desa", href: "/informasi-publik/berita-desa" },
+    { label: "Galeri", href: "/informasi-publik/galeri" },
+    { label: "Produk Hukum", href: "/informasi-publik/produk-hukum" },
+    { label: "Download", href: "/informasi-publik/download" },
   ];
   const options4 = [
     { label: "APBD", href: "#" },
@@ -60,7 +59,7 @@ const Navmenu = () => {
         } absolute flex flex-col lg:hidden w-1/2 right-0 top-10 md:top-[100px] h-screen bg-white shadow-lg rounded-md pt-5 md:max-lg:pl-8 px-5`}
       >
         <Link
-          to="/Home"
+          to="/home"
           className="flex w-full items-center py-3 md:pr-[40px] lg:px-3 xl:px-5 font-[Poppins] font-semibold
         text-[10px] md:text-[12px] lg:text-[12px] text-gray-700 hover:text-teal-700 text-nowrap"
         >
@@ -71,7 +70,7 @@ const Navmenu = () => {
         <Dropdown label="Informasi Publik" options={options3} />
         <Dropdown label="Transparansi" options={options4} />
         <a
-          href="/Pelayanan/Pelayanan"
+          href="/pelayanan/pelayanan"
           className="flex w-full items-center py-3 md:pr-[40px] lg:px-3 xl:px-5 font-[Poppins] font-semibold
         text-[10px] md:text-[12px] lg:text-[12px] text-gray-700 hover:text-teal-700 text-nowrap"
         >
@@ -88,7 +87,7 @@ const Navmenu = () => {
       {/* Dekstop */}
       <div className="hidden lg:flex">
         <Link
-          to="/Home"
+          to="/home"
           className="flex items-center lg:px-3 xl:px-5 font-[Poppins] font-semibold lg:text-[12px] text-gray-700 hover:text-teal-700 text-nowrap"
         >
           Home
@@ -98,7 +97,7 @@ const Navmenu = () => {
         <Dropdown label="Informasi Publik" options={options3} />
         <Dropdown label="Transparansi" options={options4} />
         <a
-          href="/Pelayanan/Pelayanan"
+          href="/pelayanan/pelayanan"
           className="flex items-center lg:px-3 xl:px-5 font-[Poppins] font-semibold lg:text-[12px] text-gray-700 hover:text-teal-7000 text-nowrap"
         >
           Pelayanan

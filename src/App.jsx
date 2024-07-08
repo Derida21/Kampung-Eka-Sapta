@@ -26,34 +26,34 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route index element={<Home />} />
-          <Route path="/Home" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           {/* Profil */}
-          <Route path="/Profil/Tentang Kami" element={<About />} />
-          <Route path="/Profil/Sejarah Desa" element={<Sejarah />} />
-          <Route path="/Profil/Visi Misi" element={<VisiMisi />} />
-          <Route path="/Profil/Demografi Desa" element={<DemografisDesa />} />
-          <Route path="/Profil/Geografi Desa" element={<GeografisDesa />} />
+          <Route path="/profil/tentang-kami" element={<About />} />
+          <Route path="/profil/sejarah-desa" element={<Sejarah />} />
+          <Route path="/profil/visi-misi" element={<VisiMisi />} />
+          <Route path="/profil/demografi-desa" element={<DemografisDesa />} />
+          <Route path="/profil/geografi-desa" element={<GeografisDesa />} />
           {/* Pemerintahan */}
           <Route
-            path="/Pemerintahan/Struktur Organisasi"
+            path="/pemerintahan/struktur-organisasi"
             element={<Struktur />}
           />
           <Route
-            path="/Pemerintahan/Perangkat Desa"
+            path="/pemerintahan/perangkat-desa"
             element={<PerangkatDesa />}
           />
-          <Route path="/Pemerintahan/Lembaga Desa" element={<LembagaDesa />} />
-          
-          <Route path="/Pelayanan/Pelayanan" element={<Pelayanan />} />
+          <Route path="/pemerintahan/lembaga-desa" element={<LembagaDesa />} />
           {/* Informasi Publik */}
           <Route
-            path="/Informasi-Publik/Berita-Desa"
+            path="/informasi-publik/berita-desa"
             element={<BeritaDesa />}
           />
           <Route
-            path="/Informasi-Publik/Berita-Desa/:slug"
+            path="/informasi-publik/berita-desa/:slug"
             element={<DetailBerita />}
           />
+          {/* Pelayanan */}
+          <Route path="/pelayanan/pelayanan" element={<Pelayanan />} />
         </Routes>
         <Footer />
       </Router>

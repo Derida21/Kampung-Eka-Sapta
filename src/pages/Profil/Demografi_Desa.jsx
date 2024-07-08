@@ -1,43 +1,27 @@
-import Layout from "../../component/Section/Profil/Layout";
-import imgdefault from "../../assets/img/bg_sejarah.jpg";
-import { useEffect, useState } from "react";
-import Penduduk from "../../component/Section/Profil/Demografi/penduduk";
-import Agama from "../../component/Section/Profil/Demografi/agama";
-import Pekerjaan from "../../component/Section/Profil/Demografi/pekerjaan";
-import Kesejahteraan from "../../component/Section/Profil/Demografi/kesejahteraan";
+import Layout from "../../component/Section/Profil/Demografi/Layout";
 
 const DemografisDesa = () => {
-  const url = "";
-  const [demografi, setDemografi] = useState({
-    thumbnail: imgdefault,
-    alt: "",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  });
-
-  const getDataDemografi = async () => {
-    const response = await fetch(url);
-    const dataDemografi = await response.json();
-    setDemografi(dataDemografi);
-    console.log(demografi);
-  };
-
-  useEffect(() => {
-    getDataDemografi();
-  }, []);
   return (
     <section className="px-5 md:px-[60px] lg:px-[80px] xl:px-[160px] pb-5">
-      <div className="flex flex-col items-center gap-3 pt-14 md:pt-[120px] lg:pt-[120px]">
-        <Thumbnail
-          thumbnail={demografi.thumbnail}
-          description={demografi.description}
-        />
+      <div className="flex flex-col gap-1 pt-14 md:pt-[120px] lg:pt-[120px]">
+        <h1 className="font-[Poppins] text-[12px] md:text-[24px] font-semibold text-teal-700">
+          Demografi Desa
+        </h1>
+        <p className="font-[Poppins] text-[10px] text-gray-500 text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nobis
+          iste voluptatum dicta autem excepturi culpa eum. Veritatis suscipit
+          ducimus dignissimos nemo, quo ratione exercitationem possimus nostrum
+          minima cupiditate modi. Nulla quisquam illo aut quia consequuntur
+          praesentium exercitationem deleniti minus. Aperiam excepturi eius quod
+          voluptates ipsa incidunt expedita dolorum dolore perferendis, rerum
+          nulla debitis odio officia iure! Et, officia adipisci? Fugiat quas ut
+          tenetur sit eum consectetur expedita dicta exercitationem repellendus
+          quibusdam nemo eos eius excepturi optio libero facere modi, rem nihil
+          distinctio illo accusantium ab architecto. Odit, ipsum eos.
+        </p>
       </div>
-      <div className="flex flex-col mt-2 gap-2">
-        <Penduduk />
-        <Agama />
-        <Pekerjaan />
-        <Kesejahteraan />
+      <div className="flex flex-col mt-2">
+        <Layout />
       </div>
     </section>
   );

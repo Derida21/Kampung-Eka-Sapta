@@ -50,7 +50,7 @@ const News = () => {
             Baca Juga
           </p>
           <Link
-            to="/Informasi Publik/Berita Desa"
+            to="/informasi-publik/berita-desa"
             className="font-[Poppins] text-[10px] font-light underline underline-offset-4 text-gray-700 hover:text-teal-700"
           >
             Lihat Semua
@@ -82,12 +82,10 @@ function Main({ judul, thumbnail, isi, author, index, tanggal, slug }) {
               <Card.Date date={tanggal} />
               <Card.Author author={author} />
             </div>
-            <Card.Detail
-              title={judul}
-              detail="Baca Selengkapnya"
-              href={`/Informasi Publik/Berita Desa/${slug}`}
-            >
-              {isi}
+            <Card.Detail title={judul} description={isi}>
+              <Link to={`/informasi-publik/berita-desa/${slug}`}>
+                Baca Selengkapnya
+              </Link>
             </Card.Detail>
           </div>
         </div>
@@ -100,40 +98,43 @@ function List({ listitems }) {
   return (
     <>
       {listitems.map((news, index) => (
-        <Card
+        <Link
+          to={`/informasi-publik/berita-desa/${news.slug}`}
+          className="w-full"
           key={index}
-          index={index}
-          container="md:flex md:w-full border-b-2 md:border border-gray-300 md:rounded lg:rounded-md"
-          wrapper="w-full flex flex-row md:flex-col py-2 md:p-0 gap-2 md:gap-0"
-          href={`/Informasi Publik/Berita Desa/${news.slug}`}
         >
-          <Card.Thumbnail
-            className="w-1/2 md:w-full md:h-20 lg:h-[100px] xl:h-[150px] rounded-sm lg:rounded-t-md"
-            src={news.thumbnail}
-          />
-          <div className="w-1/2 md:w-full flex flex-col gap-[10px] md:py-2 lg:py-3">
-            <div className="flex flex-col gap-3 md:gap-2 md:px-2">
-              <div className="flex justify-between items-center">
-                <Card.Date
-                  className="[&>svg]:h-2 [&>svg]:w-2 flex items-center gap-[2px] lg:gap-1 [&>svg]:lg:h-4 [&>svg]:lg:w-4 "
-                  date={news.tanggal}
-                  dateclassName="text-gray-500 text-[6px] font-medium font-[Poppins] lg:text-[10px] h-2 lg:h-3"
-                />
-                <Card.Author
-                  className=" flex items-center gap-[2px] lg:gap-1 [&>svg]:w-2 [&>svg]:lg:h-4 "
-                  svg="h-[8px] fill-gray-500"
-                  author={news.author.nama}
-                  authorclassName="text-gray-500 text-[6px] font-medium font-[Poppins] lg:text-[10px] "
+          <Card
+            container="md:flex md:w-full border-b-2 md:border border-gray-300 md:rounded lg:rounded-md"
+            wrapper="w-full flex flex-row md:flex-col py-2 md:p-0 gap-2 md:gap-0"
+          >
+            <Card.Thumbnail
+              className="w-1/2 md:w-full md:h-20 lg:h-[100px] xl:h-[150px] rounded-sm lg:rounded-t-md"
+              src={news.thumbnail}
+            />
+            <div className="w-1/2 md:w-full flex flex-col gap-[10px] md:py-2 lg:py-3">
+              <div className="flex flex-col gap-3 md:gap-2 md:px-2">
+                <div className="flex justify-between items-center">
+                  <Card.Date
+                    className="[&>svg]:h-2 [&>svg]:w-2 flex items-center gap-[2px] lg:gap-1 [&>svg]:lg:h-4 [&>svg]:lg:w-4 "
+                    date={news.tanggal}
+                    dateclassName="text-gray-500 text-[6px] font-medium font-[Poppins] lg:text-[10px] h-2 lg:h-3"
+                  />
+                  <Card.Author
+                    className=" flex items-center gap-[2px] lg:gap-1 [&>svg]:w-2 [&>svg]:lg:h-4 "
+                    svg="h-[8px] fill-gray-500"
+                    author={news.author.nama}
+                    authorclassName="text-gray-500 text-[6px] font-medium font-[Poppins] lg:text-[10px] "
+                  />
+                </div>
+                <Card.Detail
+                  className="py-0"
+                  title={news.judul}
+                  titleclassName="text-[10px] lg:text-[10px] xl:text-[12px] font-[Poppins] line-clamp-2 font-semibold text-gray-800"
                 />
               </div>
-              <Card.Detail
-                className="py-0"
-                title={news.judul}
-                titleclassName="text-[10px] lg:text-[10px] xl:text-[12px] font-[Poppins] line-clamp-2 font-semibold text-gray-800"
-              />
             </div>
-          </div>
-        </Card>
+          </Card>
+        </Link>
       ))}
     </>
   );

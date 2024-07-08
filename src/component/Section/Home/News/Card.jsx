@@ -1,4 +1,5 @@
 import { IconCalendarMonth, IconUserFilled } from "@tabler/icons-react";
+import { Link } from "react-router-dom";
 
 const Thumbnail = (props) => {
   const {
@@ -63,12 +64,12 @@ const Detail = (props) => {
         <h1 className={titleclassName}>{title}</h1>
         <p className={descriptionclassName}>{children}</p>
       </div>
-      <p
-        href={href}
+      <Link
+        to={href}
         className="text-teal-700 text-[10px] xl:text-[12px] font-medium font-[Poppins] hover:text-teal-500 underline underline-offset-2"
       >
         {detail}
-      </p>
+      </Link>
     </div>
   );
 };
@@ -80,9 +81,9 @@ function Card(props) {
     href,
   } = props;
   return (
-    <div className={container} href={href}>
+    <Link className={container} to={href}>
       <div className={wrapper}>{props.children}</div>
-    </div>
+    </Link>
   );
 }
 

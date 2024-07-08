@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Menu from "./Menu";
 
-const Sosmed = () => {
+const Kontak = () => {
   const [sosmed, setSosmed] = useState(null);
 
   const getSosmed = async () => {
@@ -31,7 +31,7 @@ const Sosmed = () => {
 
   return (
     <Menu>
-      <Menu.Title text="Media Sosial" />
+      <Menu.Title text="Kontak" />
       {sosmed && (
         <Menu.List>
           {sosmed.fb && (
@@ -50,4 +50,4 @@ const Sosmed = () => {
   );
 };
 
-export default Sosmed;
+export default Kontak;

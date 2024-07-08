@@ -28,7 +28,7 @@ export default function BeritaDesa() {
     <div className="px-5 pt-14 md:px-[60px] md:pt-[120px] lg:px-[80px] lg:pt-[130px] xl:px-[160px]">
       <div className="w-full p-2 md:p-5 bg-white rounded-xl shadow border border-gray-300 flex-col justify-center items-start gap-2 md:gap-5 inline-flex">
         {headline && (
-          <Link to={`/Informasi Publik/Berita Desa/${headline.slug}`}>
+          <Link to={`/informasi-publik/berita-desa/${headline.slug}`}>
             <Thumbnail
               note="Berita Tebaru"
               bg={headline.thumbnail}

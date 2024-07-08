@@ -22,13 +22,13 @@ function Home() {
         </h1>
         <div className="grid grid-cols-2 md:flex md:justify-around lg:justify-between gap-3">
           <Icon
-            href="/Profil/Demografi Desa"
+            href="/profil/demografi-desa"
             src={penduduk}
             alt="data-penduduk"
             text="Data Penduduk"
           />
           <Icon
-            href=""
+            href="/pelayanan/pelayanan"
             src={pelayanan}
             alt="pelayanan"
             text="Layanan Masyarakat "

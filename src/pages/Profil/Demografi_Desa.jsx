@@ -7,22 +7,10 @@ const DemografisDesa = () => {
         <h1 className="font-[Poppins] text-[12px] md:text-[24px] font-semibold text-teal-700">
           Demografi Desa
         </h1>
-        <p className="font-[Poppins] text-[10px] text-gray-500 text-justify">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nobis
-          iste voluptatum dicta autem excepturi culpa eum. Veritatis suscipit
-          ducimus dignissimos nemo, quo ratione exercitationem possimus nostrum
-          minima cupiditate modi. Nulla quisquam illo aut quia consequuntur
-          praesentium exercitationem deleniti minus. Aperiam excepturi eius quod
-          voluptates ipsa incidunt expedita dolorum dolore perferendis, rerum
-          nulla debitis odio officia iure! Et, officia adipisci? Fugiat quas ut
-          tenetur sit eum consectetur expedita dicta exercitationem repellendus
-          quibusdam nemo eos eius excepturi optio libero facere modi, rem nihil
-          distinctio illo accusantium ab architecto. Odit, ipsum eos.
-        </p>
-      </div>
-      <div className="flex flex-col mt-2">
+
         <Layout />
       </div>
+      <div className="flex flex-col mt-2"></div>
     </section>
   );
 };

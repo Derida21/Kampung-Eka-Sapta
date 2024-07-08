@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import Table from "../Table";
 import axios from "axios";
 
-export const Hubungan_Keluarga = () => {
+export const Pekerjaan = () => {
   const [data, setData] = useState([]);
 
   const getData = async () => {
     try {
       const response = await axios.get(
-        "http://nurul-huda.org/api/demografi/hubungan-keluarga"
+        "http://nurul-huda.org/api/demografi/pekerjaan"
       );
       console.log(response.data.data);
       setData(response.data.data);
@@ -29,7 +29,7 @@ export const Hubungan_Keluarga = () => {
     <Table>
       <thead>
         <tr>
-          <Table.Header>Hubungan</Table.Header>
+          <Table.Header>Pekerjaan</Table.Header>
           <Table.Header>Kelompok Umur</Table.Header>
           <Table.Header>Laki-laki</Table.Header>
           <Table.Header>Perempuan</Table.Header>
@@ -39,10 +39,10 @@ export const Hubungan_Keluarga = () => {
       <tbody>
         {data.map((item, index) => (
           <tr key={index}>
-            <Table.Body>{item.Hubungan}</Table.Body>
-            <Table.Body>{item["Kelompok umur"]}</Table.Body>
+            <Table.Body>{item.Pekerjaan}</Table.Body>
+            <Table.Body>{item["Kelompok Umur"]}</Table.Body>
             <Table.Body>{item["Laki-Laki"]}</Table.Body>
-            <Table.Body>{item["Perempuan"]}</Table.Body>
+            <Table.Body>{item.Perempuan}</Table.Body>
             <Table.Body>{item.Jumlah}</Table.Body>
           </tr>
         ))}

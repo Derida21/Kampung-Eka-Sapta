@@ -8,23 +8,18 @@ export const Kelompok_Umur = () => {
   const chartRef = useRef(null);
   const canvasRef = useRef(null);
 
-  const getData = async () => {
-    try {
-      const response = await axios.get(
-        "http://nurul-huda.org/api/demografi/umur"
-      );
-      setData(response.data.data);
-    } catch (error) {
-      if (!error.response) {
-        console.error("Network error:", error);
-      } else {
-        console.error("Error response:", error.response);
-      }
-    }
-  };
-
   useEffect(() => {
-    getData();
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://nurul-huda.org/api/demografi/umur");
+        console.log(response)
+        setData(response.data.data);
+      } catch (error) {
+        console.error(error.response ? `Error response: ${error.response}` : `Network error: ${error}`);
+      }
+    };
+
+    fetchData();
   }, []);
 
   useEffect(() => {

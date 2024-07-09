@@ -82,10 +82,12 @@ function Main({ judul, thumbnail, isi, author, index, tanggal, slug }) {
               <Card.Date date={tanggal} />
               <Card.Author author={author} />
             </div>
-            <Card.Detail title={judul} description={isi}>
-              <Link to={`/informasi-publik/berita-desa/${slug}`}>
-                Baca Selengkapnya
-              </Link>
+            <Card.Detail
+              title={judul}
+              detail="Baca Selengkapnya"
+              href={`/Informasi Publik/Berita Desa/${slug}`}
+            >
+              <div dangerouslySetInnerHTML={{ __html: isi }}></div>
             </Card.Detail>
           </div>
         </div>

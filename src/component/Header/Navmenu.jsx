@@ -10,6 +10,7 @@ const Navmenu = () => {
     { label: "Visi Misi", href: "/profil/visi-misi", subOptions: null },
     {
       label: "Demografi Desa",
+      href: null,
       subOptions: [
         {
           label: "Data Penduduk",

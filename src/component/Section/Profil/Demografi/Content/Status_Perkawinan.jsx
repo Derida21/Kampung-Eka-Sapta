@@ -70,13 +70,13 @@ export const StatusPerkawinan = () => {
               callbacks: {
                 title: (tooltipItem) => {
                   const index = tooltipItem[0].dataIndex;
-                  return labels[index]; // Menampilkan label hubungan keluarga
+                  return labels[index];
                 },
                 label: (tooltipItem) => {
                   const datasetLabel = tooltipItem.dataset.label;
-                  const value = tooltipItem.raw; // Menampilkan nilai jumlah penduduk
+                  const value = tooltipItem.raw;
                   const kelompokUmur =
-                    kelompokUmurLabels[tooltipItem.dataIndex]; // Menampilkan kelompok umur
+                    kelompokUmurLabels[tooltipItem.dataIndex];
                   return `${datasetLabel}: ${value}, Kelompok Umur: ${kelompokUmur}`;
                 },
               },

@@ -1,5 +1,5 @@
 import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Dropdown = ({ label, options }) => {
@@ -46,20 +46,19 @@ const Dropdown = ({ label, options }) => {
     }
   };
 
-  const renderOptions = () => {
+  const renderOptions = useCallback(() => {
     return options.map((option, index) => (
       <li
         key={index}
-        className=" relative group"
+        className="relative group"
         onMouseEnter={() => handleMouseEnter(index)}
         onMouseLeave={handleMouseLeave}
       >
-        <Link
-          to={option.href}
+        <button
           onClick={() => handleSubOptionClick(index)}
-          className="flex justify-between py-2 md:max-lg:pr-10 lg:px-5 lg:block cursor-pointer hover:text-teal-700 items-center "
+          className="flex justify-between py-2 md:max-lg:pr-10 lg:px-5 lg:block cursor-pointer hover:text-teal-700 items-center w-full"
         >
-          {option.label}
+          <Link to={option.href}>{option.label}</Link>
           {option.subOptions && (
             <span className="">
               {openSubOptions === index ? (
@@ -69,7 +68,7 @@ const Dropdown = ({ label, options }) => {
               )}
             </span>
           )}
-        </Link>
+        </button>
         {option.subOptions && openSubOptions === index && (
           <ul
             className={`lg:absolute lg:left-full top-0 rounded-md bg-white lg:border text-gray-500 border-gray-300 lg:shadow-lg ${
@@ -90,7 +89,7 @@ const Dropdown = ({ label, options }) => {
         )}
       </li>
     ));
-  };
+  }, [isDesktop, openSubOptions, options]);
 
   return (
     <div
@@ -100,13 +99,15 @@ const Dropdown = ({ label, options }) => {
     >
       <button
         onClick={handleClick}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
         className="[&>svg]:w-3 [&>svg]:h-3 [&>svg]:lg:hidden flex w-full justify-between items-center py-3 lg:items-center md:pr-[40px] lg:px-3 xl:px-5 font-[Poppins] font-semibold text-[10px] md:text-[12px] lg:text-[12px] text-gray-700 hover:text-teal-700 text-nowrap"
       >
         <span>{label}</span>
         {isOpen ? <IconChevronUp /> : <IconChevronDown />}
       </button>
       <ul
-        className={`lg:absolute lg:bg-white block lg:items-center lg:justify-center lg:rounded-lg lg:shadow-md font-[Poppins] text-[8px] md:text-[10px]  lg:py-3 text-nowrap transition-all duration-500 ease-in-out ${
+        className={`lg:absolute lg:bg-white flex flex-col lg:items-start lg:justify-center lg:rounded-lg lg:shadow-md font-[Poppins] text-[8px] md:text-[10px] lg:py-3 text-nowrap transition-all duration-500 ease-in-out ${
           isOpen ? "" : "hidden"
         }`}
       >

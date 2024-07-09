@@ -21,8 +21,15 @@ const Thumbnail = () => {
 
   return (
     <Layout className="flex flex-col gap-2">
-      <Layout.Thumbnail title="Sejarah Desa" src={about.src || imgdefault} alt={about.alt || "Sejarah Desa"} />
-      <Layout.Description>{about.isi}</Layout.Description>
+      <Layout.Thumbnail
+        title="Sejarah Desa"
+        src={about.src || imgdefault}
+        alt={about.alt || "Sejarah Desa"}
+      />
+      <Layout.Description>
+        {about.isi ||
+          "Lorem ipsum dolor sit amet consectetur. Nec elit quis mattis tempus in adipiscing risus. Quis tincidunt arcu adipiscing ut dolor sed suspendisse sagittis in. Urna nisl habitasse quis cras imperdiet et ridiculus iaculis semper. Non faucibus blandit felis fringilla tellus a."}
+      </Layout.Description>
     </Layout>
   );
 };

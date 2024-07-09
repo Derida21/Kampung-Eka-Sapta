@@ -5,11 +5,23 @@ import { Link, useLocation } from "react-router-dom";
 
 const Navmenu = () => {
   const options1 = [
-    { label: "Tentang Kami", href: "/profil/tentang-kami" },
-    { label: "Sejarah Desa", href: "/profil/sejarah-desa" },
-    { label: "Visi Misi", href: "/profil/visi-misi" },
-    { label: "Demografi Desa", href: "/profil/demografi-desa" },
-    { label: "Geografi Desa", href: "/profil/geografi-desa" },
+    { label: "Tentang Kami", href: "/profil/tentang-kami", subOptions: null },
+    { label: "Sejarah Desa", href: "/profil/sejarah-desa", subOptions: null },
+    { label: "Visi Misi", href: "/profil/visi-misi", subOptions: null },
+    {
+      label: "Demografi Desa",
+      subOptions: [
+        {
+          label: "Data Penduduk",
+          href: "/profil/demografi-desa/data-penduduk",
+        },
+        {
+          label: "Statistik Penduduk",
+          href: "/profil/demografi-desa/statistik-penduduk",
+        },
+      ],
+    },
+    { label: "Geografi Desa", href: "/profil/geografi-desa", subOptions: null },
   ];
   const options2 = [
     { label: "Struktur Organisasi", href: "/pemerintahan/struktur-organisasi" },

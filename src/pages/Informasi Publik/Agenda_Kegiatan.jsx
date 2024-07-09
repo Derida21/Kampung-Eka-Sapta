@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-export default function BeritaDesa() {
+export default function AgendaKegitan() {
   const [data, setData] = useState([]);
 
   const getData = async () => {
@@ -31,9 +31,9 @@ export default function BeritaDesa() {
           <Link to={`/informasi-publik/berita-desa/${headline.slug}`}>
             <Thumbnail
               note="Berita Tebaru"
-              bg={headline.thumbnail || bg_img}
-              title={headline.judul || "Judul Berita"}
-              description={headline.isi || ""}
+              bg={headline.thumbnail}
+              title={headline.judul}
+              description={headline.isi}
             />
           </Link>
         )}
@@ -58,10 +58,9 @@ export default function BeritaDesa() {
                     className="w-full"
                     title={news.judul}
                     titleclassName="font-[Poppins] font-semibold text-gray-700 hover:text-teal-700"
+                    description={news.isi}
                     descriptionclassName="font-[Poppins] text-[10px] md:text-[12px] xl:text-[14px] text-justify text-gray-500 line-clamp-5"
-                  >
-                    <div dangerouslySetInnerHTML={{ __html: news.isi }}></div>
-                  </Card.Detail>
+                  />
                 </Link>
               </Card>
             ))}

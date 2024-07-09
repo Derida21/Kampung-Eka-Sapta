@@ -6,8 +6,8 @@ const Layout = () => {
   const [active, setActive] = useState(null);
 
   const items = [
-    { id: "age", label: "Kelompok Umur" },
-    { id: "hubungan", label: "Hubungan Keluarga" },
+    { id: "age", label: "Kelompok Umur", component: <Kelompok_Umur /> },
+    { id: "hubungan", label: "Hubungan Keluarga", component: <Hubungan_Keluarga /> },
     { id: "status", label: "Status Perkawinan" },
     { id: "pekerjaan", label: "Pekerjaan" },
     { id: "pendidikan", label: "Pendidikan" },
@@ -20,7 +20,7 @@ const Layout = () => {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="flex ">
+      <div className="flex">
         {items.map((item) => (
           <div
             key={item.id}
@@ -39,15 +39,11 @@ const Layout = () => {
         {items.map((item) => (
           <div
             key={item.id}
-            className={`flex flex-col gap-2 p-4  ${
-              active === item.id
-                ? "block bg-teal-700 duration-200 ease-in-out "
-                : "hidden"
+            className={`flex flex-col gap-2 p-4 ${
+              active === item.id ? "block bg-teal-700 duration-200 ease-in-out" : "hidden"
             }`}
           >
-            {/* <h2 className="text-xl font-bold text-white">Tabel {item.label}</h2> */}
-            {active === `age` && <Kelompok_Umur />}
-            {active === `hubungan` && <Hubungan_Keluarga />}
+            {active === item.id && item.component}
           </div>
         ))}
       </div>

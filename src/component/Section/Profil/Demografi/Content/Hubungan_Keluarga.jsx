@@ -36,17 +36,17 @@ export const Hubungan_Keluarga = () => {
           <Table.Header>Jumlah</Table.Header>
         </tr>
       </thead>
-      {/* <tbody>
+      <tbody>
         {data.map((item, index) => (
           <tr key={index}>
             <Table.Body>{item.Hubungan}</Table.Body>
-            <Table.Body>{item["Kelompok Umur"]}</Table.Body>
-            <Table.Body>{item["Laki-laki"]}</Table.Body>
+            <Table.Body>{item["Kelompok umur"]}</Table.Body>
+            <Table.Body>{item["Laki-Laki"]}</Table.Body>
             <Table.Body>{item["Perempuan"]}</Table.Body>
             <Table.Body>{item.Jumlah}</Table.Body>
           </tr>
         ))}
-      </tbody> */}
+      </tbody>
     </Table>
   );
 };

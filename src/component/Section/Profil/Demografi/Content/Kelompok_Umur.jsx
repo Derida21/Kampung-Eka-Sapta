@@ -29,17 +29,14 @@ export const Kelompok_Umur = () => {
 
   useEffect(() => {
     if (data.length > 0) {
-      // Ensure previous chart instance is destroyed
       if (chartRef.current) {
         chartRef.current.destroy();
       }
 
-      // Prepare data for the chart
       const labels = data.map((data) => data["Kelompok Umur"]);
       const maleData = data.map((data) => data["Laki-laki"]);
       const femaleData = data.map((data) => data["Perempuan"]);
 
-      // Initialize new chart
       const ctx = canvasRef.current.getContext("2d");
       chartRef.current = new Chart(ctx, {
         type: "bar",
@@ -89,7 +86,6 @@ export const Kelompok_Umur = () => {
     }
 
     return () => {
-      // Cleanup chart instance on unmount
       if (chartRef.current) {
         chartRef.current.destroy();
       }
@@ -101,7 +97,7 @@ export const Kelompok_Umur = () => {
       <canvas
         ref={canvasRef}
         id="myChart"
-        className="w-full md:max-w-[500px] lg:max-w-full lg:max-h-[600px] bg-white p-2 rounded-md "
+        className="w-full md:max-w-full  bg-white p-2 rounded-md "
       ></canvas>
       <Table>
         <thead>

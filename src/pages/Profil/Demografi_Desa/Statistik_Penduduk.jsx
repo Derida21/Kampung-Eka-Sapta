@@ -10,7 +10,6 @@ const StatistikPenduduk = () => {
 
         <Layout />
       </div>
-      <div className="flex flex-col mt-2"></div>
     </section>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Kelompok_Umur } from "./Content/Kelompok_Umur";
-import { Hubungan_Keluarga } from "./Content/Hubungan_Keluarga";
-import { Status_Perkawinan } from "./Content/Status_Perkawinan";
+import { HubunganKeluarga } from "./Content/Hubungan_Keluarga";
+import { StatusPerkawinan } from "./Content/Status_Perkawinan";
 import { Pekerjaan } from "./Content/Pekerjaan";
 
 const Layout = () => {
@@ -22,7 +22,7 @@ const Layout = () => {
 
   return (
     <div className="flex flex-col md:flex-row md:gap-2 w-full">
-      <div className="flex md:gap-2 md:flex-col">
+      <div className="flex md:h-fit md:p-2 md:rounded-md md:border md:border-teal-700 md:gap-2 md:flex-col">
         {items.map((item) => (
           <div
             key={item.id}
@@ -37,22 +37,22 @@ const Layout = () => {
           </div>
         ))}
       </div>
-      <div className="w-full md:rounded-sm">
+      <div className="w-full h-full md:rounded-sm ">
         {items.map((item) => (
           <div
             key={item.id}
-            className={`flex flex-col md:rounded-md gap-2 px-4 py-3 ${
+            className={`flex flex-col md:rounded-md gap-3 px-4 py-3 ${
               active === item.id
                 ? "block bg-teal-700 duration-200 ease-in-out "
                 : "hidden"
             }`}
           >
-            <h2 className=" font-bold text-white text-[16px]">
+            <h2 className="w-full text-center font-bold text-white text-[16px]">
               Statistik Penduduk Desa Berdasarkan {item.label}
             </h2>
             {active === `umur` && <Kelompok_Umur />}
-            {active === `hubungan` && <Hubungan_Keluarga />}
-            {active === `status` && <Status_Perkawinan />}
+            {active === `hubungan` && <HubunganKeluarga />}
+            {active === `status` && <StatusPerkawinan />}
             {active === `pekerjaan` && <Pekerjaan />}
           </div>
         ))}

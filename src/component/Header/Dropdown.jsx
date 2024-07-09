@@ -54,7 +54,8 @@ const Dropdown = ({ label, options }) => {
         onMouseEnter={() => handleMouseEnter(index)}
         onMouseLeave={handleMouseLeave}
       >
-        <div
+        <Link
+          to={option.href}
           onClick={() => handleSubOptionClick(index)}
           className="flex justify-between py-2 md:max-lg:pr-10 lg:px-5 lg:block cursor-pointer hover:text-teal-700 items-center "
         >
@@ -68,7 +69,7 @@ const Dropdown = ({ label, options }) => {
               )}
             </span>
           )}
-        </div>
+        </Link>
         {option.subOptions && openSubOptions === index && (
           <ul
             className={`lg:absolute lg:left-full top-0 rounded-md bg-white lg:border text-gray-500 border-gray-300 lg:shadow-lg ${

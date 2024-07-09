@@ -56,14 +56,12 @@ const Detail = (props) => {
     description,
     descriptionclassName = "w-full line-clamp-5 text-justify text-gray-500 text-[10px] lg:text-[12px] xl:text-[16px] font-normal font-[Poppins]",
     children,
-    href,
-    detail,
   } = props;
   return (
     <div className={className}>
       <div className={detailclassName}>
         <h1 className={titleclassName}>{title}</h1>
-        <p className={descriptionclassName}>{description}</p>
+        <div className={descriptionclassName}>{description}</div>
       </div>
       <p className="text-teal-700 text-[10px] xl:text-[12px] font-medium font-[Poppins] hover:text-teal-500 underline underline-offset-2">
         {children}

@@ -84,10 +84,13 @@ function Main({ judul, thumbnail, isi, author, index, tanggal, slug }) {
             </div>
             <Card.Detail
               title={judul}
-              detail="Baca Selengkapnya"
-              href={`/Informasi Publik/Berita Desa/${slug}`}
+              description={
+                <div dangerouslySetInnerHTML={{ __html: isi }}></div>
+              }
             >
-              <div dangerouslySetInnerHTML={{ __html: isi }}></div>
+              <Link to={`/informasi-publik/berita-desa/${slug}`}>
+                Baca Selengkapnya
+              </Link>
             </Card.Detail>
           </div>
         </div>

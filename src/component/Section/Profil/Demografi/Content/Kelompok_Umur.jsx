@@ -11,11 +11,17 @@ export const Kelompok_Umur = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://nurul-huda.org/api/demografi/umur");
-        console.log(response)
+        const response = await axios.get(
+          "http://nurul-huda.org/api/demografi/umur"
+        );
+        console.log(response);
         setData(response.data.data);
       } catch (error) {
-        console.error(error.response ? `Error response: ${error.response}` : `Network error: ${error}`);
+        console.error(
+          error.response
+            ? `Error response: ${error.response}`
+            : `Network error: ${error}`
+        );
       }
     };
 
@@ -92,7 +98,7 @@ export const Kelompok_Umur = () => {
       <canvas
         ref={canvasRef}
         id="myChart"
-        className="w-full md:max-w-full  bg-white p-2 rounded-md "
+        className="w-full md:max-w-full bg-white p-2 rounded-md "
       ></canvas>
       <Table>
         <thead>

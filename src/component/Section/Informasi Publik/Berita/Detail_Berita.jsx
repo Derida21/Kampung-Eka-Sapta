@@ -68,9 +68,9 @@ const DetailBerita = () => {
                   </h1>
                 )}
                 {data.isi && (
-                  <p className="font-[Poppins] text-[10px] text-justify text-gray-500">
+                  <div className="font-[Poppins] text-[10px] text-justify text-gray-500">
                     <div dangerouslySetInnerHTML={{ __html: data.isi }}></div>
-                  </p>
+                  </div>
                 )}
               </div>
             </div>

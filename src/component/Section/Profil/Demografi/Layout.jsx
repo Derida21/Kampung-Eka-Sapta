@@ -27,10 +27,10 @@ const Layout = () => {
           <div
             key={item.id}
             onClick={() => handleClick(item.id)}
-            className={`py-2 md:rounded-md md:text-nowrap md:justify-start md:p-4 border border-teal-700 w-full flex justify-center items-center font-[Poppins] text-center text-wrap text-[6px] md:text-[10px] cursor-pointer ${
+            className={`py-2 md:rounded-md md:text-nowrap md:justify-start md:p-4 border border-teal-700 w-full flex justify-center items-center font-[Poppins] text-center text-wrap text-[6px] md:text-[10px] lg:text-[12px] cursor-pointer ${
               active === item.id
-                ? "bg-teal-700 text-white duration-200 ease-in-out"
-                : "bg-white md:hover:bg-teal-700 md:hover:text-white text-teal-700"
+                ? "bg-teal-700 text-white duration-300 ease-in-out"
+                : "bg-white md:hover:bg-teal-700 duration-300 ease-in md:hover:text-white text-teal-700"
             }`}
           >
             {item.label}
@@ -48,7 +48,7 @@ const Layout = () => {
             }`}
           >
             <h2 className=" font-bold text-white text-[16px]">
-              Tabel {item.label}
+              Statistik Penduduk Desa Berdasarkan {item.label}
             </h2>
             {active === `umur` && <Kelompok_Umur />}
             {active === `hubungan` && <Hubungan_Keluarga />}

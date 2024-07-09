@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import About from "./pages/Profil/Tentang_Kami";
 import Sejarah from "./pages/Profil/Sejarah";
 import VisiMisi from "./pages/Profil/Visi_misi";
-import DemografisDesa from "./pages/Profil/Demografi_Desa";
+import DemografisDesa from "./pages/Profil/Demografi_Desa/Statistik_Penduduk";
 import GeografisDesa from "./pages/Profil/Geografi_Desa";
 import Footer from "./component/Footer/Footer";
 import Navbar from "./component/Header/Navbar";
@@ -16,6 +16,8 @@ import LembagaDesa from "./pages/Pemerintahan/Lembaga_Desa";
 import Pelayanan from "./pages/Pelayanan/Pelayanan";
 import BeritaDesa from "./pages/Informasi Publik/Berita_Desa";
 import DetailBerita from "./component/Section/Informasi Publik/Berita/Detail_Berita";
+import AgendaKegiatan from "./pages/Informasi Publik/Agenda_Kegiatan";
+import StatistikPenduduk from "./pages/Profil/Demografi_Desa/Statistik_Penduduk";
 
 const App = () => {
   return (
@@ -31,7 +33,10 @@ const App = () => {
           <Route path="/profil/tentang-kami" element={<About />} />
           <Route path="/profil/sejarah-desa" element={<Sejarah />} />
           <Route path="/profil/visi-misi" element={<VisiMisi />} />
-          <Route path="/profil/demografi-desa" element={<DemografisDesa />} />
+          <Route
+            path="/profil/demografi-desa/statistik-penduduk"
+            element={<StatistikPenduduk />}
+          />
           <Route path="/profil/geografi-desa" element={<GeografisDesa />} />
           {/* Pemerintahan */}
           <Route
@@ -44,6 +49,10 @@ const App = () => {
           />
           <Route path="/pemerintahan/lembaga-desa" element={<LembagaDesa />} />
           {/* Informasi Publik */}
+          <Route
+            path="/informasi-publik/agenda-kegiatan"
+            element={<AgendaKegiatan />}
+          />
           <Route
             path="/informasi-publik/berita-desa"
             element={<BeritaDesa />}

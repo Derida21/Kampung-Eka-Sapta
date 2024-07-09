@@ -13,6 +13,7 @@
     "@svgr/webpack": "^8.1.0",
     "@tabler/icons-react": "^3.4.0",
     "axios": "^1.7.2",
+    "chart.js": "^4.4.3",
     "http-proxy-middleware": "^3.0.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",

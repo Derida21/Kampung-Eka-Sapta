@@ -71,7 +71,7 @@ const Dropdown = ({ label, options }) => {
         </button>
         {option.subOptions && openSubOptions === index && (
           <ul
-            className={`lg:absolute lg:left-full top-0 rounded-md bg-white lg:border text-gray-500 border-gray-300 lg:shadow-lg ${
+            className={`flex flex-col lg:absolute gap-3 lg:left-full py-2 lg:py-3 top-0 rounded-md bg-white lg:border text-gray-500 border-gray-300 lg:shadow-lg ${
               isDesktop ? "block" : ""
             }`}
           >
@@ -79,7 +79,7 @@ const Dropdown = ({ label, options }) => {
               <li key={subIndex} className="relative">
                 <Link
                   to={subOption.href}
-                  className="py-2 px-2 lg:px-4 block hover:text-teal-700"
+                  className=" px-2 lg:px-4  hover:text-teal-700"
                 >
                   {subOption.label}
                 </Link>

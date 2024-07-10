@@ -20,13 +20,14 @@ const Thumbnail = (props) => {
 
 const Date = (props) => {
   const {
-    className = "[&>svg]:h-4 [&>svg]:w-4 flex items-center gap-1",
+    className = "[&>svg]:h-4 [&>svg]:w-4 flex items-center justify-center gap-1",
+    svg = "stroke-gray-400 ",
     date,
-    dateclassName = "text-gray-500 text-[10px] font-medium font-[Poppins] h-3",
+    dateclassName = "text-gray-500 text-[10px] font-[Poppins] h-3",
   } = props;
   return (
     <div className={className}>
-      <IconCalendarMonth className="stroke-gray-400" />
+      <IconCalendarMonth className={svg} />
       <div className={dateclassName}>{date}</div>
     </div>
   );
@@ -34,10 +35,10 @@ const Date = (props) => {
 
 const Author = (props) => {
   const {
-    className = "[&>svg]:h-4 flex items-center justify-center gap-1",
-    svg = "h-3 w-[10px] fill-gray-500",
+    className = "[&>svg]:h-[14px] [&>svg]:w-3 flex items-center gap-1",
+    svg = "fill-gray-500",
     author,
-    authorclassName = "text-gray-500 text-[10px] font-medium font-[Poppins] h-3",
+    authorclassName = "text-gray-500 text-[10px] font-[Poppins] h-3",
   } = props;
   return (
     <div className={className}>

@@ -126,7 +126,7 @@ function List({ listitems }) {
                   />
                   <Card.Author
                     className=" flex items-center gap-[2px] lg:gap-1 [&>svg]:w-2 [&>svg]:lg:h-4 "
-                    svg="h-[8px] fill-gray-500"
+                    svg="h-[6px] fill-gray-500"
                     author={news.author.nama}
                     authorclassName="text-gray-500 text-[6px] font-medium font-[Poppins] lg:text-[10px] "
                   />

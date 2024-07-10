@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import img from "../../../../assets/img/Article1.png";
+import img from "../../../../assets/img/bg_berita.png";
 import Card from "../../Home/News/Card";
 
 const DetailBerita = () => {
@@ -48,6 +48,7 @@ const DetailBerita = () => {
                 {data.tanggal && (
                   <Card.Date
                     date={data.tanggal || "dd/mm/yyyy"}
+                    svg="stroke-gray-500"
                     dateclassName="font-[Poppins] text-[8px] text-gray-500"
                     className="[&>svg]:h-3 [&>svg]:w-3 inline-flex items-center gap-1 px-2 border-r-2"
                   />
@@ -56,6 +57,7 @@ const DetailBerita = () => {
                   <Card.Author
                     author={data.author.nama || "author name"}
                     authorclassName="font-[Poppins] text-[8px] text-gray-500"
+                    svg="h-3 w-[10px]"
                     className="inline-flex [&>svg]:h-3 [&>svg]:fill-gray-500 gap-1 px-2 border-r-2"
                   />
                 )}

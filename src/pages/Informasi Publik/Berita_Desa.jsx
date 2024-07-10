@@ -8,32 +8,50 @@ import { Link } from "react-router-dom";
 
 export default function BeritaDesa() {
   const [data, setData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
 
   const getData = async () => {
     try {
       const response = await axios.get("http://nurul-huda.org/api/berita");
       setData(response.data.data.data);
-      console.log(response.data.data.data);
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
     getData();
   }, []);
 
+  const handleNextPage = () => {
+    if (currentPage < Math.ceil(data.length / itemsPerPage)) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedData = data.slice(startIndex, startIndex + itemsPerPage);
+
   const headline = data[0];
-  const others = data.slice(1, 6);
+  const others = paginatedData.slice(1);
 
   return (
-    <div className="px-5 pt-14 md:px-[60px] md:pt-[120px] lg:px-[80px] lg:pt-[130px] xl:px-[160px]">
+    <div className="px-5 pt-14 md:px-[60px] md:pt-[120px] md:pb-10 lg:px-[80px] lg:pt-[130px] xl:px-[160px]">
       <div className="w-full p-2 md:p-5 bg-white rounded-xl shadow border border-gray-300 flex-col justify-center items-start gap-2 md:gap-5 inline-flex">
         {headline && (
           <Link to={`/informasi-publik/berita-desa/${headline.slug}`}>
             <Thumbnail
               note="Berita Tebaru"
-              bg={headline.thumbnail || bg_img}
-              title={headline.judul || "Judul Berita"}
-              description={headline.isi || ""}
+              bg={headline.thumbnail}
+              title={headline.judul}
+              description={headline.isi}
             />
           </Link>
         )}
@@ -42,10 +60,10 @@ export default function BeritaDesa() {
           {/* Main */}
           <Items
             text="Berita Lainnya"
-            className="w-full flex flex-col gap-2 lg:gap-5"
+            className="w-full flex flex-col gap-2 lg:gap-5 md:p-4 md:border"
           >
             {others.map((news, index) => (
-              <Card key={index} container="">
+              <Card key={index} container="md:border-b-2 md:pb-5">
                 <Link
                   to={`/Informasi-Publik/Berita-Desa/${news.slug}`}
                   className="flex flex-col md:flex-row w-full gap-2 md:gap-5"
@@ -66,6 +84,22 @@ export default function BeritaDesa() {
                 </Link>
               </Card>
             ))}
+            <div className="flex justify-between">
+              <button
+                onClick={handlePreviousPage}
+                disabled={currentPage === 1}
+                className="px-4 py-2 bg-gray-200 text-gray-700 rounded disabled:opacity-50"
+              >
+                Kembali
+              </button>
+              <button
+                onClick={handleNextPage}
+                disabled={currentPage === Math.ceil(data.length / itemsPerPage)}
+                className="px-4 py-2 bg-gray-200 text-gray-700 rounded disabled:opacity-50"
+              >
+                Selanjutnya
+              </button>
+            </div>
           </Items>
           {/* Side */}
           <div className="hidden md:flex flex-col md:gap-2 lg:gap-5 md:w-[200px] lg:w-[350px] xl:w-[400px]">

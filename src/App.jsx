@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import About from "./pages/Profil/Tentang_Kami";
 import Sejarah from "./pages/Profil/Sejarah";
 import VisiMisi from "./pages/Profil/Visi_misi";
-import DemografisDesa from "./pages/Profil/Demografi_Desa/Statistik_Penduduk";
 import GeografisDesa from "./pages/Profil/Geografi_Desa";
 import Footer from "./component/Footer/Footer";
 import Navbar from "./component/Header/Navbar";

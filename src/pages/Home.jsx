@@ -12,7 +12,7 @@ function Home() {
   return (
     <>
       {/* Carousel */}
-      <div className="px-5 pt-14 md:px-[60px] md:pt-[120px] lg:px-[80px] lg:pt-[130px] xl:px-[160px]">
+      <div className="px-5 bg-slate-100 pt-14 md:px-[60px] md:pt-[120px] lg:px-[80px] lg:pb-16 lg:pt-[130px] xl:px-[160px]">
         <Carousel />
       </div>
       {/* Data*/}
@@ -22,7 +22,7 @@ function Home() {
         </h1>
         <div className="grid grid-cols-2 md:flex md:justify-around lg:justify-between gap-3">
           <Icon
-            href="/profil/demografi-desa"
+            href="/profil/demografi-desa/statistik-penduduk"
             src={penduduk}
             alt="data-penduduk"
             text="Data Penduduk"

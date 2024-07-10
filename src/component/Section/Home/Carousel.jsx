@@ -6,31 +6,9 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const defaultCarousel = [
-  {
-    id: 1,
-    judul: "Berita 1",
-    isi: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Commodi, non voluptate sapiente et vitae voluptatem? Perferendis necessitatibus quam numquam, impedit quo qui nesciunt incidunt. Ab quos officia ad sint quasi Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, non voluptate sapiente et vitae voluptatem? Perferendis necessitatibus quam numquam, impedit quo qui nesciunt incidunt. Ab quos officia ad sint quasi",
-    thumbnail: "src/assets/img/Slide1.png",
-  },
-  {
-    id: 2,
-    judul: "Berita 2",
-    isi: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Commodi, non voluptate sapiente et vitae voluptatem? Perferendis necessitatibus quam numquam, impedit quo qui nesciunt incidunt. Ab quos officia ad sint quasi Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, non voluptate sapiente et vitae voluptatem? Perferendis necessitatibus quam numquam, impedit quo qui  nesciunt incidunt. Ab quos officia ad sint quasi",
-    thumbnail: "src/assets/img/Slide1.png",
-  },
-  {
-    id: 3,
-    judul: "Berita 3",
-    isi: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Commodi, non voluptate sapiente et vitae voluptatem? Perferendis necessitatibus quam numquam, impedit quo qui nesciunt incidunt. Ab quos officia ad sint quasi Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-    thumbnail: "src/assets/img/Slide1.png",
-  },
-];
-
 const Carousel = () => {
   const [slides, setSlides] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [loading, setLoading] = useState(true);
 
   const getData = async () => {
     try {

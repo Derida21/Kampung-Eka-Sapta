@@ -17,6 +17,7 @@ import BeritaDesa from "./pages/Informasi Publik/Berita_Desa";
 import DetailBerita from "./component/Section/Informasi Publik/Berita/Detail_Berita";
 import AgendaKegiatan from "./pages/Informasi Publik/Agenda_Kegiatan";
 import StatistikPenduduk from "./pages/Profil/Demografi_Desa/Statistik_Penduduk";
+import DetailLembaga from "./component/Section/Pemerintahan/Lembaga_Desa/Detail_Lembaga";
 
 const App = () => {
   return (
@@ -47,6 +48,10 @@ const App = () => {
             element={<PerangkatDesa />}
           />
           <Route path="/pemerintahan/lembaga-desa" element={<LembagaDesa />} />
+          <Route
+            path="/pemerintahan/lembaga-desa/detail-lembaga/:slug"
+            element={<DetailLembaga />}
+          />
           {/* Informasi Publik */}
           <Route
             path="/informasi-publik/agenda-kegiatan"

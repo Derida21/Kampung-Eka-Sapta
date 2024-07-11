@@ -53,7 +53,7 @@ function Frame({ gallery }) {
           <img
             src={item.image}
             alt=""
-            className="object-cover h-full rounded-2xl"
+            className="object-cover h-full rounded-lg"
           />
         </div>
       ))}

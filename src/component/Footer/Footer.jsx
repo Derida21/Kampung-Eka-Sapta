@@ -18,6 +18,7 @@ export default function Footer() {
                 addres="Kec. Talisayan Kab. Berau Kalimantan Timur"
                 textclassName="text-white font-bold text-[22px] md:text-[26px] lg:text-[32px] xl:text-[40px] font-[Poppins] text-nowrap"
                 addresclassName="font-[Poppins] font-semibold text-white text-[10px] md:text-[12px] lg:text-[14px] xl:text-[18px]"
+                href="/home"
               />
               <span className="text-white text-[7px] md:text-[8px] lg:text-[10px] xl:text-[12px] font-inter text-center lg:tracking-wide ">
                 Jl. Pulau Dewata RT.001 Kampung Eka Sapta Kec. Talisayan Kab.

@@ -8,6 +8,7 @@ function Navbar() {
       <Logo
         text="Kampung Eka Sapta"
         addres="Kec. Talisayan Kab. Berau Kalimantan Timur "
+        href="/home"
       />
       <Navmenu />
     </div>

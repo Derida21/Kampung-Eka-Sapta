@@ -12,7 +12,7 @@ function Home() {
   return (
     <>
       {/* Carousel */}
-      <div className="px-5 bg-slate-100 pt-14 md:px-[60px] md:pt-[120px] lg:px-[80px] lg:pb-16 lg:pt-[130px] xl:px-[160px]">
+      <div className="px-5 bg-slate-100 pt-14 pb-5 md:px-[60px] md:pt-[120px] lg:px-[80px] lg:pb-16 lg:pt-[130px] xl:px-[160px]">
         <Carousel />
       </div>
       {/* Data*/}

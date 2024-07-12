@@ -80,7 +80,7 @@ export default function BeritaDesa() {
                       <div dangerouslySetInnerHTML={{ __html: news.isi }}></div>
                     }
                     descriptionclassName="font-[Poppins] text-[10px] md:text-[12px] xl:text-[14px] text-justify text-gray-500 line-clamp-3"
-                  ></Card.Detail>
+                  />
                 </Link>
               </Card>
             ))}

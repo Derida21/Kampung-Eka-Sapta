@@ -111,7 +111,7 @@ const Navmenu = () => {
         <Dropdown label="Transparansi" options={options4} />
         <a
           href="/pelayanan/pelayanan"
-          className="flex items-center lg:px-3 xl:px-5 font-[Poppins] font-semibold lg:text-[12px] text-gray-700 hover:text-teal-7000 text-nowrap"
+          className="flex items-center lg:px-3 xl:px-5 font-[Poppins] font-semibold lg:text-[12px] text-gray-700 hover:text-teal-700 text-nowrap"
         >
           Pelayanan
         </a>

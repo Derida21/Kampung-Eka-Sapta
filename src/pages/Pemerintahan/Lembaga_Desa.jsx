@@ -14,10 +14,10 @@ const LembagaDesa = () => {
     {
       id: 2,
       title: "Lembaga sdasd asdsadas asdasdasd adas",
-      image: "/src/assets/img/logo-berau3.png",
+      image: "/src/assets/img/barca.png",
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam maxime eius aut dolorem ipsum sint iste. Ut fugit, ipsum, velit, eius obcaecati necessitatibus impedit in enim iure architecto at illum. Error atque saepe, dolore provident possimus quasi molestias vero soluta similique incidunt aliquam harum hic, sapiente, explicabo cumque assumenda ratione deserunt ut! Quas dolores rem ad distinctio. Rerum, iusto harum. Aperiam omnis saepe porro neque commodi quos voluptatum earum? Accusantium repudiandae eveniet harum blanditiis fugit molestias impedit asperiores iste nemo, officiis cumque sit inventore! Iusto dignissimos ratione saepe tenetur voluptate.",
-      slug: "lembaga-1",
+      slug: "lembaga-2",
     },
   ];
 
